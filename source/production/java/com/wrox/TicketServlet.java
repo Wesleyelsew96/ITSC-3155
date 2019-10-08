@@ -49,6 +49,12 @@ public class TicketServlet extends HttpServlet
             case "download":
                 this.downloadAttachment(request, response);
                 break;
+            case "update":
+            	this.updateTicketForm(request, response);
+            	break;
+            case "delete":
+            	this.deleteTicket(request, response);
+            	break;
             case "list":
             default:
                 this.listTickets(request, response);
@@ -56,7 +62,17 @@ public class TicketServlet extends HttpServlet
         }
     }
 
-    @Override
+    private void deleteTicket(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void updateTicketForm(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
@@ -68,6 +84,9 @@ public class TicketServlet extends HttpServlet
             case "create":
                 this.createTicket(request, response);
                 break;
+            case "update":
+            	this.updateTicket(request, response);
+            	break;
             case "list":
             default:
                 response.sendRedirect("tickets");
@@ -75,7 +94,12 @@ public class TicketServlet extends HttpServlet
         }
     }
 
-    private void showTicketForm(HttpServletRequest request,
+    private void updateTicket(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void showTicketForm(HttpServletRequest request,
                                 HttpServletResponse response)
             throws ServletException, IOException
     {
